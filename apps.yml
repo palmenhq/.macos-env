@@ -31,4 +31,9 @@
             name: spotify
             state: present
             greedy: yes
+      - name: Install Figma
+        homebrew_cask:
+            name: figma
+            state: present
+            greedy: yes
 
