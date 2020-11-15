@@ -107,5 +107,8 @@
         lineinfile:
             path: ~/.zshrc
             line: 'eval $(thefuck --alias)'
+      - name: Add tree
+        homebrew:
+            name: tree
 
 
