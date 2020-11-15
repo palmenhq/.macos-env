@@ -1,0 +1,57 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+      # ZSH
+      - name: install oh-my-zsh
+        shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        register: install_oh_my_zsh
+        args:
+            creates: ~/.oh-my-zsh
+      - debug: msg="{{ install_oh_my_zsh.stdout }}"
+      - name: set completion directory ownership
+        file:
+            path: /usr/local/share/zsh
+            mode: '744'
+      - name: set completion directory ownership
+        file:
+            path: /usr/local/share/zsh/site-functions
+            mode: '744'
+      - name: Set zsh theme
+        lineinfile:
+            path: ~/.zshrc
+            regexp: '^ZSH_THEME='
+            line: 'ZSH_THEME="sunaku"'
+
+      # Git stuff
+      - name: Check for git user email
+        register: git_user_email_present
+        shell: git config user.email
+        changed_when: git_user_email_present.rc == 1
+        ignore_errors: True
+      - name: Check for git user name
+        register: git_user_name_present
+        shell: git config user.name
+        changed_when: git_user_name_present.rc == 1
+        ignore_errors: True
+      - name: Set git user email
+        shell: git config --global user.email "{{ git_committer_email }}"
+        when: git_user_email_present.rc == 1
+      - name: Set git user name
+        shell: git config --global user.name "{{ git_committer_name }}"
+        when: git_user_name_present.rc == 1
+
+      - name: Check for git excludes file
+        register: git_user_excludesfile_present
+        shell: git config core.excludesFile
+        changed_when: git_user_excludesfile_present.rc == 1
+        ignore_errors: True
+      - name: Ensure global gitignore file 
+        copy:
+            src: ./resources/.gitignore-global
+            dest: ~/.gitignore-global
+            force: no
+        when: git_user_excludesfile_present.rc == 1
+      - name: Set git excludesFile
+        shell: git config --global core.excludesFile "~/.gitignore-global"
+        when: git_user_excludesfile_present.rc == 1
+

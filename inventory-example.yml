@@ -1,0 +1,7 @@
+local:
+    hosts:
+        localhost:
+    vars:
+        git_committer_email: blargh@blargh.com
+        git_committer_name: Blarg Blargsen
+
