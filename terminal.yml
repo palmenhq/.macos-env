@@ -98,3 +98,14 @@
             path: ~/.zshrc
             line: '[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion'
 
+
+      # Misc
+      - name: Add thefuck
+        homebrew:
+            name: thefuck
+      - name: Add thefuck config
+        lineinfile:
+            path: ~/.zshrc
+            line: 'eval $(thefuck --alias)'
+
+
