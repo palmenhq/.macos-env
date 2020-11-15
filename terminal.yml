@@ -55,3 +55,9 @@
         shell: git config --global core.excludesFile "~/.gitignore-global"
         when: git_user_excludesfile_present.rc == 1
 
+      # Vim stuff
+      - name: Add vimrc
+        lineinfile:
+            path: ~/.vimrc
+            line: source ~/.macos-env/resources/.vimrc
+
