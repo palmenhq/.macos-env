@@ -61,3 +61,40 @@
             path: ~/.vimrc
             line: source ~/.macos-env/resources/.vimrc
 
+
+      # Java
+      - name: Add Jenv
+        homebrew:
+            name: jenv
+            update_homebrew: yes
+      - name: Ensure Jenv export config
+        lineinfile:
+            path: ~/.zshrc
+            line: 'export PATH="$HOME/.jenv/bin:$PATH"'
+      - name: Ensure Jenv init
+        lineinfile:
+            path: ~/.zshrc
+            line: 'eval "$(jenv init -)"'
+      - name: Install maven
+        homebrew:
+            name: maven
+
+
+      # Node
+      - name: Add NVM home dir
+        file:
+            path: ~/.nvm
+            state: directory
+            mode: '0755'
+      - name: Add NVM
+        homebrew:
+            name: nvm
+      - name: Ensure NVM init 1
+        lineinfile:
+            path: ~/.zshrc
+            line: '[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm'
+      - name: Ensure NVM init 2
+        lineinfile:
+            path: ~/.zshrc
+            line: '[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion'
+

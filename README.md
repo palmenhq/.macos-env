@@ -8,7 +8,7 @@ Also, it needs to be cloned into `~/.macos-env` in order for referenced files (s
 
 ## Running the scripts
 
-Create your inventory by `cp inventory_example.yml inventory.yml`.
+Create your inventory by `cp inventory_example.yml inventory.yml` and substitute the example values in that file.
 
 This repo is based on ansible, use `ansible-playbook -i inventory.yml some-file.yml`.
 
