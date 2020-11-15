@@ -1,0 +1,34 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+      - name: Install Spectacle
+        homebrew_cask:
+            name: spectacle
+            state: present
+            greedy: yes
+      - name: Install Postico
+        homebrew_cask:
+            name: postico
+            state: present
+            greedy: yes
+      - name: Install IntelliJ Ultimate
+        homebrew_cask:
+            name: intellij-idea
+            state: present
+            greedy: yes
+      - name: Install Insomnia
+        homebrew_cask:
+            name: insomnia
+            state: present
+            greedy: yes
+      - name: Install KeePassX
+        homebrew_cask:
+            name: keepassx
+            state: present
+            greedy: yes
+      - name: Install Spotify
+        homebrew_cask:
+            name: spotify
+            state: present
+            greedy: yes
+
