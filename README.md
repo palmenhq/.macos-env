@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-This repo assumes you have [Ansible](https://www.ansible.com) and [Homebrew](https://brew.sh) installed. You will also need the ansible-galaxy homebrew extension. Get it by running `./instal-ansible-plugins.sh`
+This repo assumes you have [Ansible](https://www.ansible.com) and [Homebrew](https://brew.sh) installed. You will also need the ansible-galaxy community extension. Get it by running `./install-ansible-plugins.sh`
 
 Also, it needs to be cloned into `~/.macos-env` in order for referenced files (such as *rc-files) to be correctly read
 
