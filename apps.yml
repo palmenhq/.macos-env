@@ -36,4 +36,9 @@
             name: figma
             state: present
             greedy: yes
+      - name: Install Slack
+        homebrew_cask:
+          name: slack
+          state: present
+          greedy: yes
 
