@@ -81,22 +81,22 @@
 
 
       # Node
-      - name: Add NVM home dir
-        file:
-            path: ~/.nvm
-            state: directory
-            mode: '0755'
-      - name: Add NVM
+      - name: Add FNM
         homebrew:
-            name: nvm
-      - name: Ensure NVM init 1
+            name: fnm
+      - name: Ensure FNM init
         lineinfile:
             path: ~/.zshrc
-            line: '[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm'
-      - name: Ensure NVM init 2
+            line: 'eval "$(fnm env)" # This loads fnm (node manager)'
+
+
+      - name: Add Go
+        homebrew:
+            name: go
+      - name: Ensure go bin in PATH
         lineinfile:
             path: ~/.zshrc
-            line: '[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion'
+            line: 'export PATH="$PATH:$(go env GOPATH)/bin"'
 
 
       # Misc
@@ -110,5 +110,20 @@
       - name: Add tree
         homebrew:
             name: tree
-
+      - name: Add libpq
+        homebrew:
+            name: libpq
+      - name: Ensure libpq in path
+        lineinfile:
+            path: ~/.zshrc
+            line: 'export PATH="/usr/local/opt/libpq/bin:$PATH"'
+      - name: Tap heroku
+        homebrew_tap:
+            name: heroku/brew
+      - name: Add heroku
+        homebrew:
+            name: heroku
+      - name: Add jq
+        homebrew:
+            name: jq
 
