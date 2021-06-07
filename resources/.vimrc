@@ -51,4 +51,6 @@ filetype plugin indent on    " required
 :syntax on
 :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 :set list
+:command NT NERDTreeToggle
+
 
