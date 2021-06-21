@@ -129,4 +129,7 @@
       - name: Add dbmate
         homebrew:
           name: dbmate
+      - name: Add Docker
+        homebrew_cask:
+          name: docker
 
