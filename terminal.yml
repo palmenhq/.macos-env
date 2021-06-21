@@ -126,4 +126,7 @@
       - name: Add jq
         homebrew:
             name: jq
+      - name: Add dbmate
+        homebrew:
+          name: dbmate
 
