@@ -41,4 +41,9 @@
           name: slack
           state: present
           greedy: yes
+      - name: Install Firefox
+        homebrew_cask:
+          name: firefox
+          state: present
+          greedy: yes
 
