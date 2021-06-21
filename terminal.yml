@@ -21,6 +21,10 @@
             path: ~/.zshrc
             regexp: '^ZSH_THEME='
             line: 'ZSH_THEME="sunaku"'
+      - name: add zshrc extras
+        lineinfile:
+          path: ~/.zshrc
+          line: 'source "$HOME/.macos-env/resources/.zshrc_extra"'
 
       # Git stuff
       - name: Check for git user email
