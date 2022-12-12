@@ -70,6 +70,12 @@
       homebrew:
         name: jenv
         update_homebrew: yes
+    - name: Tap brew cask
+      community.general.homebrew_tap:
+        name: homebrew/cask-versions
+    - name: Add Temurin17
+      homebrew_cask:
+        name: temurin17
     - name: Install maven
       homebrew:
         name: maven
