@@ -1,49 +1,39 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-      - name: Install Spectacle
-        homebrew_cask:
-            name: spectacle
-            state: present
-            greedy: yes
-      - name: Install Postico
-        homebrew_cask:
-            name: postico
-            state: present
-            greedy: yes
-      - name: Install IntelliJ Ultimate
-        homebrew_cask:
-            name: intellij-idea
-            state: present
-            greedy: yes
-      - name: Install Insomnia
-        homebrew_cask:
-            name: insomnia
-            state: present
-            greedy: yes
-      - name: Install KeePassX
-        homebrew_cask:
-            name: keepassx
-            state: present
-            greedy: yes
-      - name: Install Spotify
-        homebrew_cask:
-            name: spotify
-            state: present
-            greedy: yes
-      - name: Install Figma
-        homebrew_cask:
-            name: figma
-            state: present
-            greedy: yes
-      - name: Install Slack
-        homebrew_cask:
-          name: slack
-          state: present
-          greedy: yes
-      - name: Install Firefox
-        homebrew_cask:
-          name: firefox
-          state: present
-          greedy: yes
-
+    - name: Install Spectacle
+      homebrew_cask:
+        name: spectacle
+        state: present
+    - name: Install IntelliJ Ultimate
+      homebrew_cask:
+        name: intellij-idea
+        state: present
+    - name: Install Insomnia
+      homebrew_cask:
+        name: insomnia
+        state: present
+    - name: Install Spotify
+      homebrew_cask:
+        name: spotify
+        state: present
+    - name: Install Figma
+      homebrew_cask:
+        name: figma
+        state: present
+    - name: Install Slack
+      homebrew_cask:
+        name: slack
+        state: present
+    - name: Install Firefox
+      homebrew_cask:
+        name: firefox
+        state: present
+    - name: Install 1password
+      homebrew_cask:
+        name: 1password
+        state: present
+    - name: Install iTerm 2
+      homebrew_cask:
+        name: iterm2
+        state: present
