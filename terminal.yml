@@ -8,18 +8,24 @@
       args:
         creates: ~/.oh-my-zsh
     - debug: msg="{{ install_oh_my_zsh.stdout }}"
-    - name: set completion directory ownership
-      file:
-        path: /usr/local/share/zsh
-        mode: '744'
-    - name: set completion directory ownership
-      file:
-        path: /usr/local/share/zsh/site-functions
-        mode: '744'
+    - name: check for .zshrc
+      stat:
+        path: ~/.zshrc
+      register: zshrc_exists
+    - name: check for .zprofile
+      stat:
+        path: ~/.zprofile
+      register: zprofile_exists
     - name: add zshrc extras
       lineinfile:
         path: ~/.zshrc
         line: 'source "$HOME/.macos-env/resources/.zshrc_extra"'
+      when: zshrc_exists.stat.exists == True
+    - name: add sprofile extras
+      lineinfile:
+        path: ~/.zprofile
+        line: 'source "$HOME/.macos-env/resources/.zshrc_extra"'
+      when: zprofile_exists.stat.exists == True
 
     # Git stuff
     - name: Check for git user email
@@ -109,3 +115,6 @@
     - name: Add Docker
       homebrew_cask:
         name: docker
+    - name: Add direnv
+      homebrew:
+        name: direnv
