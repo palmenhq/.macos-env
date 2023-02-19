@@ -118,3 +118,9 @@
     - name: Add direnv
       homebrew:
         name: direnv
+    - name: Add aws
+      homebrew:
+        name: awscli
+    - name: aws-vault
+      homebrew_cask:
+        name: aws-vault
