@@ -75,13 +75,9 @@
     - name: Add Jenv
       homebrew:
         name: jenv
-        update_homebrew: yes
-    - name: Tap brew cask
-      community.general.homebrew_tap:
-        name: homebrew/cask-versions
-    - name: Add Temurin17
-      homebrew_cask:
-        name: temurin17
+    - name: Add OpenJDK 21
+      homebrew:
+        name: openjdk@21
     - name: Install maven
       homebrew:
         name: maven

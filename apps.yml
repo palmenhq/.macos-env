@@ -1,12 +1,15 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-    - name: Install Spectacle
+    - name: Install Rectangle
       homebrew_cask:
-        name: spectacle
+        name: rectangle
     - name: Install IntelliJ Ultimate
       homebrew_cask:
         name: intellij-idea
+    - name: Install iterm2
+      homebrew_cask:
+        name: iterm2
     - name: Install Insomnia
       homebrew_cask:
         name: insomnia
@@ -22,6 +25,12 @@
     - name: Install Firefox
       homebrew_cask:
         name: firefox
+    - name: Install Firefox Developer Edition
+      homebrew_cask:
+        name: firefox@developer-edition
+    - name: Install Google Chrome
+      homebrew_cask:
+        name: google-chrome
     - name: Install 1password
       homebrew_cask:
         name: 1password
@@ -34,3 +43,6 @@
     - name: Install vscode
       homebrew_cask:
         name: visual-studio-code
+    - name: Install Yubikey Authenticator
+      homebrew_cask:
+        name: yubico-authenticator
