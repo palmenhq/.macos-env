@@ -1,5 +1,3 @@
-alias -g doco="docker-compose"
-
 # Jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
@@ -7,15 +5,9 @@ eval "$(jenv init -)"
 # FNM
 eval "$(fnm env)" # This loads fnm (node manager)
 
-# Go
-export PATH="$PATH:$(go env GOPATH)/bin"
-
 eval "$(thefuck --alias)"
 
 # libpq in path
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
-# zsh theme
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # direnv

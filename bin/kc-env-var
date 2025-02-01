@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Use: kc-env-var SECRET_ENV_VAR
+security find-generic-password -w -a "${USER}" -D "environment variable" -s "${1}"

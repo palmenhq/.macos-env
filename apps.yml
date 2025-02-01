@@ -31,3 +31,6 @@
     - name: Install Dropbox
       homebrew_cask:
         name: dropbox
+    - name: Install vscode
+      homebrew_cask:
+        name: visual-studio-code

@@ -121,6 +121,16 @@
     - name: Add aws
       homebrew:
         name: awscli
-    - name: aws-vault
+    - name: Add aws-vault
       homebrew_cask:
         name: aws-vault
+    - name: Add ykman
+      homebrew:
+        name: ykman
+    - name: Add pgcli
+      homebrew:
+        name: pgcli
+    - name: Add terraform
+      homebrew:
+        name: terraform
+

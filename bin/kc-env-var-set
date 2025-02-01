@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ -z "$1" ]]; then
+  print "No environment variable name provided"
+fi
+
+read -r -p "Enter Value for ${1}: " secret
+
+if [[ -z "${1}" ]]; then
+  return 1
+fi
+if [[ -z "${secret}" ]]; then
+  return 1
+fi
+
+security add-generic-password -U -a "${USER}" -D "environment variable" -s "${1}" -w "${secret}"
