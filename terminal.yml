@@ -129,4 +129,7 @@
     - name: Add terraform
       homebrew:
         name: terraform
+    - name: Add ffmpeg
+      homebrew:
+        name: ffmpeg
 
