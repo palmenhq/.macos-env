@@ -37,6 +37,9 @@
     - name: Install CopyClip
       homebrew_cask:
         name: copyclip
+    - name: Install MonitorControl
+      homebrew_cask:
+        name: monitorcontrol
     - name: Install Dropbox
       homebrew_cask:
         name: dropbox
