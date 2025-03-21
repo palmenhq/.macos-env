@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sext -xeuo pipefail
+set -xeuo pipefail
 
 input_file="${1}"
 output_file="${2}"
