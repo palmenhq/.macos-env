@@ -132,4 +132,7 @@
     - name: Add ffmpeg
       homebrew:
         name: ffmpeg
+    - name: Add highlight
+      homebrew:
+        name: highlight
 
